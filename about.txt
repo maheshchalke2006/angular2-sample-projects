@@ -1,0 +1,1 @@
+This is sample projects forlder with multiple angular 2 projects created for practice of angular 2.
