@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://unpkg.com/@reactivex/rxjs@5.4.3/dist/global/Rx.js"></script>
+
+    </head>
+<body>
+
+<h1>My First Heading</h1>
+
+<button>Click here</button>
+
+        <script>
+            var button = document.querySelector('button');
+            Rx.Observable.fromEvent(button, 'click')
+            .subscribe(() => console.log('Clicked!'));
+        </script>
+
+        <script>
+            var button = document.querySelector('button');
+            Rx.Observable.fromEvent(button, 'click')
+            .scan(count => count + 1, 0)
+            .subscribe(count => console.log(`Clicked ${count} times`));            
+        </script>
+
+        <script>
+            var button = document.querySelector('button');
+            Rx.Observable.fromEvent(button, 'click')
+            .throttleTime(1000)
+            .scan(count => count + 1, 0)
+            .subscribe(count => console.log(`Clicked ${count} times`));            
+        </script>
+
+        <script>
+            var observable = Rx.Observable.create(function (observer) {
+            observer.next(1);
+            observer.next(2);
+            observer.next(3);
+            setTimeout(() => {
+                observer.next(4);
+                observer.complete();
+            }, 1000);
+            });
+
+            console.log('just before subscribe');
+            observable.subscribe({
+            next: x => console.log('got value ' + x),
+            error: err => console.error('something wrong occurred: ' + err),
+            complete: () => console.log('done'),
+            });
+            console.log('just after subscribe');            
+        </script>
+
+
+</body>
+</html>
