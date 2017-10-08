@@ -13,6 +13,13 @@ import { PageNotFoundComponent } from './component/page-not-found/page-not-found
 import { ProductListComponent } from './component/product-list/product-list.component';
 import { ProductComponent } from './component/product/product.component';
 
+import { SecurePage, DisablePage } from './app.routeSettings';
+import { LoginComponent } from './component/login/login.component';
+
+import { LoginService } from './service/login.service';
+
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +28,14 @@ import { ProductComponent } from './component/product/product.component';
     HomePageComponent,
     PageNotFoundComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule, pageMappingRoute
+    HttpModule, pageMappingRoute, FormsModule
   ],
-  providers: [],
+  providers: [SecurePage, DisablePage, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
