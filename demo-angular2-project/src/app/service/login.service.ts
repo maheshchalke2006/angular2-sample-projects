@@ -4,5 +4,5 @@ import { Injectable } from '@angular/core';
 export class LoginService {
   userName: string;
   constructor() { }
-
+  // Add code for isAdmin to check user is admin or not.
 }

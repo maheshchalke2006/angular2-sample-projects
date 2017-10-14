@@ -9,6 +9,9 @@ import {ProductListComponent} from './component/product-list/product-list.compon
 import {ProductComponent} from './component/product/product.component';
 import {LoginComponent} from './component/login/login.component';
 import { SecurePage , DisablePage} from './app.routeSettings';
+import {AdminHomepageComponent} from './component/admin-homepage/admin-homepage.component';
+import { UserListComponent } from './component/user-list/user-list.component';
+import { PaymentListComponent } from './component/payment-list/payment-list.component';
 
 
 
@@ -21,7 +24,13 @@ const pageMapping: Routes = [
     {path: 'login', component: LoginComponent},
     // This will disable all links in product-list page.
     {path: 'product-list', component: ProductListComponent, canDeactivate: [DisablePage]},
+    // Admin pages
+    // {path: 'admin', component: AdminHomepageComponent},
     {path: 'product/:id', component: ProductComponent},
+    {path: 'admin', component: AdminHomepageComponent, children: [
+      {path: 'user', component: UserListComponent},
+      {path: 'payment', component: PaymentListComponent},
+    ]},
     {path: '**', component: PageNotFoundComponent}
 ];
 

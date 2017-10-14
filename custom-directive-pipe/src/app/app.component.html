@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h4>Custome Directive / Pipes</h4>
+
+Example of pipe uppercase , text changed to uppercase.
+<p [innerText]="message|uppercase"></p> 
+
+Example for date pipe, format changed to dd mm yyyy
+<p [innerText]="todayDate | date: 'dd/MM/yyyy'"></p>
+
+Example for simple pipe 
+<p [innerText]="message|simplepipe"></p> 
+
+<b>Example for simple pipe with argument</b>
+<p [innerText]="message|simplepipe:'welcome'"></p>
+
+<b>Example for custom sort pipe</b>
+<ul>  
+  <li *ngFor="let r of rate">
+    {{ r }} 
+  </li>
+</ul>
+<br />
+<b>Result after sorting</b>
+<ul>  
+  <li *ngFor="let r of rate|sortpipe">
+    {{ r }} 
+  </li>
+</ul>  
+
+<br />
+<br />
+  <b> Directive </b>
+
+  Following example impliments summarydirective   
+
+  <p appSummarydirective="{{limit}}">kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkoo</p>
+
+
+
+
+

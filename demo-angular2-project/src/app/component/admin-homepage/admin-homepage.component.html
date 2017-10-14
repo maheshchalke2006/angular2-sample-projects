@@ -1,0 +1,9 @@
+<p>
+  admin-homepage works!
+</p>
+
+<a routerLink = "user" *ngIf="isAdmin">User List</a>
+<br />
+<a routerLink = "payment">Payment/Order List</a>
+
+<router-outlet></router-outlet>

@@ -19,6 +19,10 @@ import { LoginComponent } from './component/login/login.component';
 import { LoginService } from './service/login.service';
 
 import { FormsModule } from '@angular/forms';
+import { AdminHomepageComponent } from './component/admin-homepage/admin-homepage.component';
+import { UserListComponent } from './component/user-list/user-list.component';
+import { PaymentListComponent } from './component/payment-list/payment-list.component';
+import { Router, Routes, RouterModule} from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     ProductListComponent,
     ProductComponent,
-    LoginComponent
+    LoginComponent,
+    AdminHomepageComponent,
+    UserListComponent,
+    PaymentListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,3 +46,9 @@ import { FormsModule } from '@angular/forms';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+const pageRouting: Routes = [
+  {
+    
+  }
+];
