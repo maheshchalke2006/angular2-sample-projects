@@ -7,7 +7,7 @@ export class SimplepipePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
     // return null;
-    //debugger;
+    // debugger;
     if (args) {
       return args + value;
     }

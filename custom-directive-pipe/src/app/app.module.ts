@@ -10,6 +10,9 @@ import {LoginServiceService} from './service/login-service.service';
 import { SimplepipePipe } from './simplepipe.pipe';
 import { SortpipePipe } from './sortpipe.pipe';
 import { SummarydirectiveDirective } from './summarydirective.directive';
+import { HookcomponentComponent } from './hookcomponent/hookcomponent.component';
+import { FormsModule } from '@angular/forms';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +20,14 @@ import { SummarydirectiveDirective } from './summarydirective.directive';
     LoginComponent,
     SimplepipePipe,
     SortpipePipe,
-    SummarydirectiveDirective
+    SummarydirectiveDirective,
+    HookcomponentComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
