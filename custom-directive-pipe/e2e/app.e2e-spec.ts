@@ -11,4 +11,13 @@ describe('sample-project App', () => {
     page.navigateTo();
     expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
+
+  it('result should be 11 + 22 = 33', () => {
+    page.navigateTo();
+    page.EnterNumber1();
+    page.EnterNumber2();
+    page.ClickonAdd();
+    const result = page.GetResult();
+    expect(result).toEqual('33');
+  });
 });

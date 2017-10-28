@@ -16,7 +16,7 @@ export class CalculatorComponent implements OnInit {
   }
 
   sum() {
-    this.result = this.n1 + this.n2;
+    this.result = parseInt(this.n1.toString()) + parseInt(this.n2.toString());
   }
 
 }
